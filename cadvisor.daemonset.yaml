@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: cadvisor
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      name: cadvisor
+  template:
+    metadata:
+      labels:
+        name: cadvisor
+    spec:
+      containers:
+      - name: cadvisor
+        image: google/cadvisor:latest
+        ports:
+          - name: http
+            containerPort: 8080
+            protocol: TCP
+        restartPolicy: Always
