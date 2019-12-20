@@ -24,9 +24,8 @@ spec:
         - containerPort: 80
         restartPolicy: Always
         envFrom:
-          - configMapRefPostgresql:
+          - configMapRef:
               name: postgres-config
-          - secretRefPostgresql:
-              name: postgres-secret
-          - configMapRefRedis:
               name: redis-config
+          - secretRef:
+              name: postgres-secret
