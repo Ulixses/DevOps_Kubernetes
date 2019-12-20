@@ -12,13 +12,14 @@ spec:
       labels:
         app: worker
     spec:
+      replicas: 2
       containers:
       - name: worker
         image: epitechcontent/t-dop-600-worker:k8s
         resources:
           limits:
             memory: "256m"
-            cpu: "500m"
+            cpu: "500M"
         restartPolicy: Always
         envFrom:
           - configMapRefPostgresql:
