@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: result-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: result.dop.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: result-service
+          servicePort: 80
