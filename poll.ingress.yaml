@@ -11,11 +11,8 @@ metadata:
     traefik.backend.loadbalancer.sticky: "true"
     ##
 spec:
-#   tls:
-#   - hosts:
-#     - cafe.example.com
   rules:
-   - host: poll.dop.io
+  - host: poll.dop.io
     http:
       paths:
       - path: /poll
