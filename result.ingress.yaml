@@ -9,7 +9,7 @@ spec:
   - host: result.dop.io
     http:
       paths:
-      - path: /
+      - path: /result
         backend:
           serviceName: result-service
           servicePort: 80
