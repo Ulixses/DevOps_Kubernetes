@@ -5,17 +5,9 @@ metadata:
   namespace: default
 spec:
   type: NodePort
+  selector:
+    app: poll
   ports:
-<<<<<<< HEAD
-   - port: 80
-     #targetPort: 80
-     targetPort: 30021
-     protocol: TCP
-     name: http
-=======
   - name: http
     port: 80
     targetPort: 80
->>>>>>> 9f306e80b4a9e597c55b9224e139e3b9ba89fb4c
-  selector:
-   app: poll

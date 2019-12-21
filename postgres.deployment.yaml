@@ -16,9 +16,11 @@ spec:
     spec:
       restartPolicy: Always
       volumes:
-      - name: postgres-volume 
-        hostPath:
-            path: ./data
+      - name: postgres-volume
+        persistentVolumeClaim:
+          claimName: postgres-pv-claim
+        # hostPath:
+        #     path: ./data
       containers:
       - name: postrgres
         image: postgres:12
