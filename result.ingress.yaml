@@ -3,16 +3,15 @@ kind: Ingress
 metadata:
   name: result-ingress
   annotations:
-    kubernetes.io/ingress.class: "traefik"
-    traefik.frontend.passHostHeader: "true"
-    traefik.backend.loadbalancer.sticky: "true"
-    ##
+    kubernetes.io/ingress.class: traefik
+    #traefik.frontend.passHostHeader: "true"
+    #traefik.backend.loadbalancer.sticky: "true"
 spec:
   rules:
   - host: result.dop.io
     http:
       paths:
-      - path: /result
+      - path: /
         backend:
           serviceName: result-service
-          servicePort: 80
+          servicePort: http

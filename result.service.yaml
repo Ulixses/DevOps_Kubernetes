@@ -5,9 +5,8 @@ metadata:
   namespace: default
 spec:
   selector:
-    app: result-service
+    app: result
   ports:
-  - port: 80
+  - name: http
+    port: 80
     targetPort: 80
-    protocol: TCP
-    name: http

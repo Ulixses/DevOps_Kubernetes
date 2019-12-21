@@ -8,11 +8,11 @@ spec:
     app: traefik
   ports:
   - port: 80
-    targetPort: 30021
+    nodePort: 30021
     protocol: TCP
     name: http
   - port: 8080
-    targetPort: 30042
+    nodePort: 30042
     protocol: TCP
     name: admin
   type: NodePort

@@ -10,4 +10,11 @@ kubectl --namespace=kube-public delete deployments.apps traefik
 
 kubectl --namespace=kube-public delete service traefik-service
 
+kubectl delete ingress --all
+
+kubectl delete configmaps redis-config
+kubectl delete configmaps postgres-config
+
+kubectl delete secrets postgres-secret
+
 #clear
