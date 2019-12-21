@@ -13,14 +13,17 @@ spec:
       labels:
         app: worker
     spec:
+<<<<<<< HEAD
+=======
+      restartPolicy: Always
+>>>>>>> 4ada7f924b0fa83e4d9ce653d610a3ff0073e97c
       containers:
       - name: worker
         image: epitechcontent/t-dop-600-worker:k8s
         resources:
           limits:
-            memory: "256mi"
-            cpu: "100M"
-        restartPolicy: Always
+            memory: "256Mi"
+            cpu: "100m"
         envFrom:
           - configMapRef:
               name: postgres-config

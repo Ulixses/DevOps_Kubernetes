@@ -14,7 +14,7 @@ spec:
     metadata:
       labels:
         app: poll
-    spec:
+    spec: 
       restartPolicy: Always
       containers:
       - name: poll

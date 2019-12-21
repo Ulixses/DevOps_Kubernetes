@@ -24,12 +24,12 @@ kubectl apply -f traefik.rbac.yaml \
 -f traefik.deployment.yaml \
 -f traefik.service.yaml
 
-# sleep 2
+sleep 2
 
-# #Create database manually after first deploy
-# echo 'CREATE TABLE votes ( id text PRIMARY KEY , vote text NOT NULL );' \
-# | kubectl exec -i $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep postgres-deployment) -- psql -U spain -d orchestrator
+#Create database manually after first deploy
+echo 'CREATE TABLE votes ( id text PRIMARY KEY , vote text NOT NULL );' \
+| kubectl exec -i $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep postgres-deployment) -c postgres -- psql -U spain -d orchestrator
 
 # #Adds 2 fake DNS to /etc/hosts
-# echo " $(kubectl get nodes -o jsonpath ='{ $.items [*]. status.addresses [?( @.type =="ExternalIP")].address }') poll.dop.io result.dop.io" \
+# echo " $(kubectl get nodes -o jsonpath='{ $.items[*].status.addresses[?(@.type =="ExternalIP")].address }') poll.dop.io result.dop.io" \
 # | sudo tee -a /etc/hosts

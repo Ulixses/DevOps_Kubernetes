@@ -12,6 +12,7 @@ spec:
       labels:
         app: result
     spec:
+      restartPolicy: Always
       replicas: 2
       containers:
       - name: result
@@ -19,19 +20,13 @@ spec:
         resources:
           limits:
             memory: "128M"
-            cpu: "100m"
+            cpu: "500m"
         ports:
         - containerPort: 80
-        restartPolicy: Always
         envFrom:
-          - configMapRef:
+          - configMapRefPostgresql:
               name: postgres-config
-<<<<<<< HEAD
           - secretRefPostgresql:
               name: postgres-secrets
           - configMapRefRedis:
-=======
->>>>>>> 5603d29312ba8b49d4e5f00d34782f3dbe878d31
               name: redis-config
-          - secretRef:
-              name: postgres-secret
