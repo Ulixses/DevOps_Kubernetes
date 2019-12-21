@@ -15,7 +15,7 @@ spec:
 #   - hosts:
 #     - cafe.example.com
   rules:
-#   - host: cafe.example.com
+   - host: poll.dop.io
     http:
       paths:
       - path: /poll

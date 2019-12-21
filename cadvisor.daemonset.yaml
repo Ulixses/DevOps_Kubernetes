@@ -12,6 +12,7 @@ spec:
       labels:
         name: cadvisor
     spec:
+      restartPolicy: Always
       containers:
       - name: cadvisor
         image: google/cadvisor:latest
@@ -19,4 +20,4 @@ spec:
           - name: http
             containerPort: 8080
             protocol: TCP
-        restartPolicy: Always
+      
