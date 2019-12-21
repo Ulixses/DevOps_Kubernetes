@@ -23,10 +23,9 @@ spec:
             cpu: "50m"
         ports:
         - containerPort: 80
-        
         envFrom:
           - configMapRef:
               name: postgres-config
               name: redis-config
           - secretRef:
-              name: postgres-secret
+              name: postgres-secrets

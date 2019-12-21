@@ -14,11 +14,13 @@ spec:
       labels:
         app: postgres
     spec:
-      volumes:
-      - name: postgres-volume 
-        hostPath:
-            path: /data
       restartPolicy: Always
+      volumes:
+      - name: postgres-volume
+        persistentVolumeClaim:
+          claimName: postgres-pv-claim
+        # hostPath:
+        #     path: ./data
       containers:
       - name: postrgres
         image: postgres:12
