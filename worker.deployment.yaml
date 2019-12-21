@@ -25,4 +25,4 @@ spec:
               name: postgres-config
               name: redis-config
           - secretRef:
-              name: postgres-secrets
+              name: postgres-secret

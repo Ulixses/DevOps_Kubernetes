@@ -4,6 +4,7 @@ metadata:
   name: poll-service
   namespace: default
 spec:
+  type: ClusterIP
   selector:
    app: poll
   ports:
