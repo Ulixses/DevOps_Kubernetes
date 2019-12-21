@@ -6,7 +6,6 @@ metadata:
   labels:
     app: postgres
 spec:
-  restartPolicy: Always
   selector:
     matchLabels:
       app: postgres
@@ -15,6 +14,7 @@ spec:
       labels:
         app: postgres
     spec:
+      restartPolicy: Always
       volumes:
       - name: postgres-volume 
         hostPath:

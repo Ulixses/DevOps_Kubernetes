@@ -19,8 +19,8 @@ spec:
         image: epitechcontent/t-dop-600-worker:k8s
         resources:
           limits:
-            memory: "256mi"
-            cpu: "100M"
+            memory: "256Mi"
+            cpu: "500m"
         envFrom:
           - configMapRef:
               name: postgres-config
