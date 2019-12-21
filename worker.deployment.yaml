@@ -18,8 +18,8 @@ spec:
         image: epitechcontent/t-dop-600-worker:k8s
         resources:
           limits:
-            memory: "256m"
-            cpu: "500M"
+            memory: "256mi"
+            cpu: "100M"
         restartPolicy: Always
         envFrom:
           - configMapRefPostgresql:
