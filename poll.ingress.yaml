@@ -1,0 +1,24 @@
+#apiVersion: networking.k8s.io/v1beta1
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: poll-ingress
+  namespace: default
+  ## read explanation 
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    traefik.frontend.passHostHeader: "true"
+    traefik.backend.loadbalancer.sticky: "true"
+    ##
+spec:
+#   tls:
+#   - hosts:
+#     - cafe.example.com
+  rules:
+#   - host: cafe.example.com
+    http:
+      paths:
+      - path: /poll
+        backend:
+          serviceName: poll-service
+          servicePort: 80
