@@ -4,6 +4,7 @@ metadata:
   name: result
   namespace: default
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: result
@@ -12,7 +13,7 @@ spec:
       labels:
         app: result
     spec:
-      replicas: 2
+      restartPolicy: Always
       containers:
       - name: result
         image: epitechcontent/t-dop-600-result:k8s
@@ -22,7 +23,7 @@ spec:
             cpu: "100m"
         ports:
         - containerPort: 80
-        restartPolicy: Always
+        
         envFrom:
           - configMapRef:
               name: postgres-config

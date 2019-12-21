@@ -17,18 +17,17 @@ spec:
       volumes:
       - name: postgres-volume 
         hostPath:
-            path: ./data
-
+            path: /data
+      restartPolicy: Always
       containers:
       - name: postrgres
         image: postgres:12
         resources:
           limits:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: "50Mi"
+            cpu: "100m"
         ports:
         - containerPort: 5432
-        restartPolicy: Always
         volumeMounts:
         - name: postgres-volume
           mountPath: /var/lib/postgresql/data
