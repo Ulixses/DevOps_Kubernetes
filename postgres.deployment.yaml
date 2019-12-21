@@ -6,6 +6,7 @@ metadata:
   labels:
     app: postgres
 spec:
+  restartPolicy: Always
   selector:
     matchLabels:
       app: postgres
@@ -17,15 +18,14 @@ spec:
       volumes:
       - name: postgres-volume 
         hostPath:
-            path: /data
-      restartPolicy: Always
+            path: ./data
       containers:
       - name: postrgres
         image: postgres:12
         resources:
           limits:
-            memory: "50Mi"
-            cpu: "100m"
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 5432
         volumeMounts:
@@ -35,5 +35,5 @@ spec:
           - configMapRef:
               name: postgres-config
           - secretRef:
-              name: postgres-secret
+              name: postgres-secrets
       

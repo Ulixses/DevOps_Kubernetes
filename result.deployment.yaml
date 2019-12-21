@@ -4,6 +4,7 @@ metadata:
   name: result
   namespace: default
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: result
@@ -13,7 +14,6 @@ spec:
         app: result
     spec:
       restartPolicy: Always
-      replicas: 2
       containers:
       - name: result
         image: epitechcontent/t-dop-600-result:k8s
