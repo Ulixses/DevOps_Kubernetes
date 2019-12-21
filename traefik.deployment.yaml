@@ -27,4 +27,8 @@ spec:
             containerPort: 80
           - name: admin 
             containerPort: 8080
+        args:
+        - --api
+        - --kubernetes
+        - --logLevel=INFO
         
