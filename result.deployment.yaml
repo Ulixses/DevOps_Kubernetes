@@ -24,9 +24,8 @@ spec:
         ports:
         - containerPort: 80
         envFrom:
-          - configMapRefPostgresql:
+          - configMapRef:
               name: postgres-config
-          - secretRefPostgresql:
-              name: postgres-secrets
-          - configMapRefRedis:
               name: redis-config
+          - secretRef:
+              name: postgres-secrets
