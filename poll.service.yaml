@@ -3,15 +3,19 @@ kind: Service
 metadata:
   name: poll-service
   namespace: default
-  labels:
-    app: poll
 spec:
   type: NodePort
   ports:
+<<<<<<< HEAD
    - port: 80
      #targetPort: 80
      targetPort: 30021
      protocol: TCP
      name: http
+=======
+  - name: http
+    port: 80
+    targetPort: 80
+>>>>>>> 9f306e80b4a9e597c55b9224e139e3b9ba89fb4c
   selector:
    app: poll
