@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis-deployment
+  name: redis
   namespace: default
   labels:
     app: redis
@@ -21,7 +21,7 @@ spec:
         resources:
           limits:
             memory: "50Mi"
-            cpu: "100m"
+            cpu: "50m"
         ports:
         - containerPort: 6379
         
