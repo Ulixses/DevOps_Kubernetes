@@ -38,4 +38,18 @@ spec:
             name: postgres-secret
         - configMapRef:
             name: postgres-config
-      
+      ##
+      # volumes:
+      #   - name: postgres-volume
+      #     hostPath:
+      #       path: /var/lib/postgresql/data
+      ##
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                  - epitech-s4qe

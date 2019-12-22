@@ -24,4 +24,12 @@ spec:
             cpu: "50m"
         ports:
         - containerPort: 6379
-        
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                  - epitech-s4ql

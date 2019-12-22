@@ -30,4 +30,12 @@ spec:
             name: postgres-secret
         - configMapRef:
             name: postgres-config
-          
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                  - epitech-s4qe

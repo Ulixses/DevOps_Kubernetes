@@ -22,7 +22,7 @@ spec:
       labels:
         app: traefik
     spec:
-      restartPolicy: Always
+      #restartPolicy: Always
       serviceAccountName: traefik-ingress-controller
       containers:
       - name: traefik
@@ -40,4 +40,14 @@ spec:
         - --api
         - --kubernetes
         - --logLevel=INFO
-        
+      restartPolicy: Always
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                  - epitech-s4ql
+                  - epitech-s4qe
