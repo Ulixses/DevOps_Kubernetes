@@ -20,14 +20,14 @@ spec:
           - name: http
             containerPort: 8080
             protocol: TCP
-        # volumeMounts:
-        #   - name: postgres-volume
-        #     mountPath: /var/lib/postgresql/data
-            #readOnly: true
-      # volumes:
-      #   - name: postgres-volume
-      #     hostPath:
-      #       path: /var/lib/postgresql/data
+        volumeMounts:
+          - name: postgres-volume
+            mountPath: /var/lib/postgresql/data
+            readOnly: true
+      volumes:
+        - name: postgres-volume
+          hostPath:
+            path: /var/lib/postgresql/data
       # affinity:
       #   nodeAffinity:
       #     requiredDuringSchedulingIgnoredDuringExecution:
