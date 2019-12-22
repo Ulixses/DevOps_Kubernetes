@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: worker
   namespace: default
+  labels:
+    app: worker
 spec:
   selector:
     matchLabels:
@@ -23,6 +25,7 @@ spec:
         envFrom:
           - configMapRef:
               name: postgres-config
+          - configMapRef:
               name: redis-config
           - secretRef:
               name: postgres-secret

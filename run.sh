@@ -24,9 +24,9 @@ kubectl apply -f traefik.rbac.yaml \
 -f traefik.deployment.yaml \
 -f traefik.service.yaml
 
-#sleep 2
+#sleep 5
 
-# #Create database manually after first deploy
+#Create database manually after first deploy
 # echo 'CREATE TABLE votes ( id text PRIMARY KEY , vote text NOT NULL );' \
 # | kubectl exec -i $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep postgres) -- psql -U spain -d orchestrator
 
