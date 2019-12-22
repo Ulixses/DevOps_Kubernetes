@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: result
   namespace: default
+  labels:
+    app: result
 spec:
   replicas: 2
   selector:
@@ -24,8 +26,8 @@ spec:
         ports:
         - containerPort: 80
         envFrom:
-          - configMapRef:
-              name: postgres-config
-              name: redis-config
-          - secretRef:
-              name: postgres-secret
+        - secretRef:
+            name: postgres-secret
+        - configMapRef:
+            name: postgres-config
+          

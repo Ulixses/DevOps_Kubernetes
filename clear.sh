@@ -12,6 +12,10 @@ kubectl --namespace=kube-public delete service traefik-service
 
 kubectl delete ingress --all
 
+kubectl delete  persistentvolumeclaims postgres-pv-claim
+
+kubectl delete  persistentvolume postgres-volume
+
 #kubectl delete configmaps redis-config
 #kubectl delete configmaps postgres-config
 

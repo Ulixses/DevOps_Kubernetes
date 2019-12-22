@@ -22,6 +22,7 @@ spec:
       labels:
         app: traefik
     spec:
+      restartPolicy: Always
       serviceAccountName: traefik-ingress-controller
       containers:
       - name: traefik

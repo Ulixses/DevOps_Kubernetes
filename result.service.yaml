@@ -4,6 +4,7 @@ metadata:
   name: result-service
   namespace: default
 spec:
+  type: ClusterIP
   selector:
     app: result
   ports:
